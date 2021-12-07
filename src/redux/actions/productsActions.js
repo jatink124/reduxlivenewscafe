@@ -7,6 +7,13 @@ export const setProducts = (products) => {
   };
 };
 
+export const setProductsCat = (catproducts) => {
+  return {
+    type: ActionTypes.SET_PRODUCTS_CAT,
+    payload: catproducts,
+  };
+};
+
 export const selectedProduct = (product) => {
   return {
     type: ActionTypes.SELECTED_PRODUCT,

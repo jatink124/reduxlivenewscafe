@@ -1,14 +1,33 @@
 import React, { useEffect, useCallback, useMemo } from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Card } from 'react-bootstrap';
+import styled from "styled-components";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { setProducts,setProductsCat } from "../redux/actions/productsActions";
-import ProductComponent from "./ProductComponent";
-import {MainContainer} from '../Styles/ProductListing';
-const ProductPage = () => {
+import { useDispatch } from "react-redux";
+import { setProducts,setProductsCat } from "../../redux/actions/productsActions";
+
+
+import IndiaCards from "./IndiaCards";
+
+
+const Wrapper = styled.div`
+.card-horizontal{
+display: flex;
+flex-direction:row;
+}
+.imgsmall{
+  width:100px;
+  height:100px;
+}
+`;
+const India = () => {
+ console.log(useSelector((state) => state)+"dsfd");
   const products = useSelector((state) => state.allProducts.products);
   const catproducts = useSelector((state) => state.catallProducts.catproducts);
-
+  const cat = "Sports"
   const dispatch = useDispatch();
+  
   const fetchProducts = async () => {
     const response = await axios
       .get("https://www.catchmyjob.in/php-react-post-list/all-users.php")
@@ -19,28 +38,31 @@ const ProductPage = () => {
       dispatch(setProducts(response.data.users));
   };
   const catfetchProducts = async () => {
+   
     const response = await axios
-      .get("https://www.catchmyjob.in/php-react-post-list/category-wise-allusers.php")
+      .get(`https://www.catchmyjob.in/php-react-post-list/category-wise-allusers.php?cat=${cat}`)
       .catch((err) => {
         console.log("Err: ", err);
       });
 
       dispatch(setProductsCat(response.data.users));
-  };
+     
+    };
 
   useEffect(() => {
     fetchProducts();
+    
     catfetchProducts();
-  }, []);
+ 
+}, []);
+  
+  return <>
+ <div className="row">
 
-  console.log("Products :", catproducts);
-  return (
- <MainContainer>
- <div className="ui grid container">
-      <ProductComponent />
-    </div>
-    </MainContainer>
-  );
+<IndiaCards/>
+ </div>
+
+   </>;
 };
 
-export default ProductPage;
+export default India;
