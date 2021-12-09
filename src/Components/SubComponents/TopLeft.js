@@ -14,15 +14,14 @@ object-fit:cover;
 `;
 
 const TopLeft = () => {
-   
-    console.log(useSelector((state) => state));
+
   const products = useSelector((state) => state.allProducts.products);
   
-  return <>
+ 
 
 
-  {
-   products.filter(products=>products.PostList=="").map((product) => {
+  
+  const renderListt= products.filter(products=>products.PostList=="").map((product) => {
    
     const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition } = product;
 
@@ -45,7 +44,7 @@ const TopLeft = () => {
         </div>
      
         <div class="card-body">
-            <h4 class="card-title">{CategoryName}</h4>
+            {/* <h4 class="card-title">{CategoryName}</h4> */}
             <Link to={`/product/${id}`}>
             <p class="card-text"><b>{PostTitle}</b></p></Link>
         </div>
@@ -59,11 +58,11 @@ const TopLeft = () => {
      </div></div>
 )
 })   
-}
 
 
-
-</>
+return <>
+{renderListt}
+</>;
 
  
 };

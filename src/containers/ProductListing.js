@@ -1,10 +1,10 @@
-import React, { useEffect, useCallback, useMemo } from "react";
+import React, { useEffect, useCallback, useMemo ,Suspense} from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts,setProductsCat } from "../redux/actions/productsActions";
 import ProductComponent from "./ProductComponent";
 import {MainContainer} from '../Styles/ProductListing';
-const ProductPage = () => {
+const ProductListing = () => {
   const products = useSelector((state) => state.allProducts.products);
   const catproducts = useSelector((state) => state.catallProducts.catproducts);
 
@@ -43,4 +43,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default ProductListing;

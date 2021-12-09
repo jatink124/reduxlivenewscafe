@@ -1,12 +1,21 @@
-import React from "react";
+import React,{Suspense} from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Card } from 'react-bootstrap';
 import styled from "styled-components";
-import HorizontalCards from "../Components/SubComponents/HorizontalCards";
-import BiggerCard from "../Components/SubComponents/BiggerCard";
-import CardList from "../Components/SubComponents/CardList";
-import TopLeft from "../Components/SubComponents/TopLeft";
+
+//import HorizontalCards from "../Components/SubComponents/HorizontalCards";
+//import BiggerCard from "../Components/SubComponents/BiggerCard";
+// import CardList from "../Components/SubComponents/CardList";
+
+// const TopLeft = React.lazy(() => import('../Components/SubComponents/TopLeft'));
+//import TopLeft from "../Components/SubComponents/TopLeft";
+
+const BiggerCard = React.lazy(() => import('../Components/SubComponents/BiggerCard'));
+const CardList = React.lazy(() => import('../Components/SubComponents/CardList'));
+const TopLeft = React.lazy(() => import('../Components/SubComponents/TopLeft'));
+const HorizontalCards = React.lazy(() => import('../Components/SubComponents/HorizontalCards'));
+
 const Wrapper = styled.div`
 .card-horizontal{
 display: flex;
@@ -25,14 +34,17 @@ const ProductComponent = () => {
   return <>
  <div className="row">
    <div className="col-md-4">
-  
-<TopLeft/>
+  <TopLeft/>
    </div>
    <div className="col-md-4">
+   <Suspense fallback={<div>Loading...</div>}>
    <BiggerCard/>
+   </Suspense>
      </div>
      <div className="col-md-4">
+     <Suspense fallback={<div>Loading...</div>}>
   <CardList/>
+  </Suspense>
      </div>
  </div>
 

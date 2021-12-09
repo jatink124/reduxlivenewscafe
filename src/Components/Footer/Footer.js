@@ -2,9 +2,9 @@ import React from 'react'
 import { Card,Container,Row,Col,ListGroup,Nav } from 'react-bootstrap';
 
 import {Ftr} from './Footerstyle';
-
-export const Footer = () => {
-    return (
+ const Footer = () => {
+  
+  return (
   
   <Ftr>   
       <div class="ftr">
@@ -34,3 +34,4 @@ export const Footer = () => {
         </Ftr>
     )
 }
+export default Footer;
