@@ -30,7 +30,7 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
   const fetchProductDetail = async (id) => {
     const response = await axios
-      .get(`https://www.livenewscafe.com/php-react-post-list/getidallusers.php/?id=`+`${id}`)
+      .get(`https://www.livenewscafe.xyz/php-react-post-list/getidallusers.php/?id=`+`${id}`)
       .catch((err) => {
         console.log("Err: ", err);
       });

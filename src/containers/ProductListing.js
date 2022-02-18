@@ -12,7 +12,7 @@ const ProductListing = () => {
   const fetchProducts = async () => {
     
     const response = await axios
-      .get("https://www.livenewscafe.com/php-react-post-list/all-users.php")
+      .get("https://www.livenewscafe.xyz/php-react-post-list/all-users.php")
       .catch((err) => {
         console.log("Err: ", err);
       });
