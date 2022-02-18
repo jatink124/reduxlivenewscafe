@@ -18,10 +18,10 @@ img.card-img-top{
 const BiggerCard = () => {
  console.log(useSelector((state) => state));
   const products = useSelector((state) => state.allProducts.products);
+     
+const renderListt = products.filter(products=>products.PostPosition==2&products.PostList==""&products.Status=="1").map((product) => {
   
-      
-const renderListt = products.filter(products=>products.PostPosition==1&products.PostList!="").map((product) => {
-  
+ console.log(products+"Status");  
   const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl } = product;
   return (
     <Link to={`/product/${id}`}>

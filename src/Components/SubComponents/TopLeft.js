@@ -16,23 +16,13 @@ object-fit:cover;
 const TopLeft = () => {
 
   const products = useSelector((state) => state.allProducts.products);
-  
- 
 
-
-  
-  const renderListt= products.filter(products=>products.PostList=="").map((product) => {
-   
-    const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition } = product;
-
-   
-   
-   return  (
+  const renderListt= products.filter(products=>products.PostPosition==1&products.PostList==""&products.Status==1).map((product) => {
+   const {id,CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition} = product;
+return  (
     <div class='row'>
    <div class='col'>
- 
-
-     <div class="card">
+ <div class="card">
      <Wrapper>
     <div class="card-horizontal">
         <div class="img-square-wrapper">

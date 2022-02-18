@@ -12,7 +12,6 @@ import India from "./pages/India/India";
 import Technology from "./pages/Technology/Technology";
 import World from "./pages/World/World";
 import  Footer  from "./Components/Footer/Footer";
-import MaintenanceSite from "./Components/MaintenanceSite";
 
 //const Navigation = React.lazy(() => import('./Components/Navbar'));
  //const ProductListing = React.lazy(() => import('./containers/ProductListing'));
@@ -21,7 +20,7 @@ import MaintenanceSite from "./Components/MaintenanceSite";
 function App() {
   return (
     <div className="App">
-  {/* <Navigation/>
+  <Navigation/>
   <Suspense fallback={<div>Loading...</div>}>
     
    
@@ -40,8 +39,8 @@ function App() {
         </Switch>
         </Router>
         </Suspense>   
-      <Footer/> */}
-        <MaintenanceSite/>
+      <Footer/>
+        
     </div>
     
   );

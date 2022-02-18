@@ -18,13 +18,14 @@ const HorizontalCards = () => {
    
     console.log(useSelector((state) => state));
   const products = useSelector((state) => state.allProducts.products);
-  
+  console.log(products);
   return <>
 
 
   <div class='row'>{
-   products.filter(products=>products.PostList=="").map((product) => {
-   
+
+   products.filter(products=>products.PostList==""&products.PostPosition==4&products.Status=="1").map((product) => {
+    
     const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition } = product;
 
    

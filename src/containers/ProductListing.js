@@ -10,29 +10,33 @@ const ProductListing = () => {
 
   const dispatch = useDispatch();
   const fetchProducts = async () => {
+    
     const response = await axios
-      .get("https://www.catchmyjob.in/php-react-post-list/all-users.php")
-      .catch((err) => {
-        console.log("Err: ", err);
-      });
-  //  console.log(response.data.users);
-      dispatch(setProducts(response.data.users));
-  };
-  const catfetchProducts = async () => {
-    const response = await axios
-      .get("https://www.catchmyjob.in/php-react-post-list/category-wise-allusers.php")
+      .get("https://www.livenewscafe.com/php-react-post-list/all-users.php")
       .catch((err) => {
         console.log("Err: ", err);
       });
 
-      dispatch(setProductsCat(response.data.users));
+      console.log(response.data);
+     
+  dispatch(setProducts(response.data));
+  };
+  const catfetchProducts = async () => {
+   
+    const response = await axios
+      .get("https://www.livenewscafe.com/php-react-post-list/category-wise-allusers.php")
+      .catch((err) => {
+        console.log("Err: ", err);
+      });
+
+      dispatch(setProductsCat(response.data));
   };
 
   useEffect(() => {
     fetchProducts();
     catfetchProducts();
   }, []);
-
+  console.log("Products :", products);
   console.log("Products :", catproducts);
   return (
  <MainContainer>

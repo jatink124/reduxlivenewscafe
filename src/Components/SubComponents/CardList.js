@@ -18,10 +18,10 @@ flex-direction:row;
 const CardList = () => {
  console.log(useSelector((state) => state));
   const products = useSelector((state) => state.allProducts.products);
-  const renderListtright = products.filter(person=>person.PostList!="").map((product) => {
+  const renderListtright = products.filter(products=>products.PostList!=""&products.PostPosition==3&products.Status=="1").map((product) => {
   
-  const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl } = product;
-  var ty = PostTitle.split(".");
+  const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostList } = product;
+  var ty = PostList.split(".");
   return (
    <>
 <Link to={`/product/${id}`}>
