@@ -23,7 +23,7 @@ const ProductDetails = () => {
   line-height: 40px;
 }
 .imgsmall{
-  width:1000px;
+  width:1110px;
   height:300px;
 }
 }
@@ -37,7 +37,7 @@ const ProductDetails = () => {
   line-height: 40px;
 }
 .imgsmall{
-  width:340px;
+  width:300px;
   height:100px;
 }
 }
