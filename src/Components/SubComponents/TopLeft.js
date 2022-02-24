@@ -35,7 +35,7 @@ return  (
      
         <div class="card-body">
             {/* <h4 class="card-title">{CategoryName}</h4> */}
-            <Link to={`/product/${id}`}>
+            <Link to={`/news/${id}`}>
             <p class="card-text"><b>{PostTitle}</b></p></Link>
         </div>
        

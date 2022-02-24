@@ -24,7 +24,7 @@ const renderListt = products.filter(products=>products.PostPosition==2&products.
  console.log(products+"Status");  
   const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl } = product;
   return (
-    <Link to={`/product/${id}`}>
+    <Link to={`/news/${id}`}>
    <div class="card" >
     {/* <img
       src={PostUrl}

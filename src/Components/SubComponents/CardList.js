@@ -21,7 +21,8 @@ const CardList = () => {
   const renderListtright = products.filter(products=>products.PostList!=""&products.PostPosition==3&products.Status=="1").map((product) => {
   
   const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostList } = product;
-  var ty = PostList.split(".");
+  
+  var ty = PostDetails.split(".");
   return (
    <>
 <Link to={`/product/${id}`}>

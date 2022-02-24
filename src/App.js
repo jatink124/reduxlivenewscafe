@@ -33,7 +33,7 @@ function App() {
           <Route path="/India" exact component={India} />
           <Route path="/Technology" exact component={Technology} />
           <Route path="/World" exact component={World} />
-          <Route path="/product/:id" component={ProductDetails} />
+          <Route path="/news/:id" component={ProductDetails} />
           <Route>404 Not Found!</Route>
         
         </Switch>

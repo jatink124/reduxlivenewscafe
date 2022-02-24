@@ -24,7 +24,7 @@ const ProductListing = () => {
   const catfetchProducts = async () => {
    
     const response = await axios
-      .get("https://www.livenewscafe.com/php-react-post-list/category-wise-allusers.php")
+      .get("https://www.livenewscafe.xyz/php-react-post-list/category-wise-allusers.php")
       .catch((err) => {
         console.log("Err: ", err);
       });
