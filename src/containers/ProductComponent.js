@@ -5,13 +5,25 @@ import { Card } from 'react-bootstrap';
 import styled from "styled-components";
 
 //import HorizontalCards from "../Components/SubComponents/HorizontalCards";
-//import BiggerCard from "../Components/SubComponents/BiggerCard";
+// import BiggerCard from "../Components/SubComponents/BiggerCard";
 // import CardList from "../Components/SubComponents/CardList";
 
-// const TopLeft = React.lazy(() => import('../Components/SubComponents/TopLeft'));
-//import TopLeft from "../Components/SubComponents/TopLeft";
 
-const BiggerCard = React.lazy(() => import('../Components/SubComponents/BiggerCard'));
+// import TopLeft from "../Components/SubComponents/TopLeft";
+// const TopLeft = React.lazy(() => {
+//   return new Promise(resolve => setTimeout(resolve, 1 * 1000)).then(
+//     () =>
+//     import("../Components/SubComponents/TopLeft")
+      
+//   );
+// });
+const BiggerCard = React.lazy(() => {
+  return new Promise(resolve => setTimeout(resolve, 7 * 1000)).then(
+    () =>
+     import("../Components/SubComponents/BiggerCard")
+       
+  );
+});
 const CardList = React.lazy(() => import('../Components/SubComponents/CardList'));
 const TopLeft = React.lazy(() => import('../Components/SubComponents/TopLeft'));
 const HorizontalCards = React.lazy(() => import('../Components/SubComponents/HorizontalCards'));
@@ -34,7 +46,9 @@ const ProductComponent = () => {
   return <>
  <div className="row">
    <div className="col-md-4">
+   <Suspense fallback={<div>Loading...</div>}>
   <TopLeft/>
+  </Suspense>
    </div>
    <div className="col-md-4">
    <Suspense fallback={<div>Loading...</div>}>
@@ -42,13 +56,13 @@ const ProductComponent = () => {
    </Suspense>
      </div>
      <div className="col-md-4">
-     <Suspense fallback={<div>Loading...</div>}>
+     {/* <Suspense fallback={<div>Loading...</div>}>
   <CardList/>
-  </Suspense>
+  </Suspense> */}
      </div>
  </div>
 
-<HorizontalCards/>
+{/* <HorizontalCards/> */}
    </>;
 };
 

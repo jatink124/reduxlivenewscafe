@@ -11,8 +11,15 @@ import Entertainment from "./pages/Entertainment/Entertainment";
 import India from "./pages/India/India";
 import Technology from "./pages/Technology/Technology";
 import World from "./pages/World/World";
-import  Footer  from "./Components/Footer/Footer";
-
+import { News } from "./News";
+// import  Footer  from "./Components/Footer/Footer";
+const Footer = React.lazy(() => {
+  return new Promise(resolve => setTimeout(resolve, 20 * 1000)).then(
+    () =>
+    import("./Components/Footer/Footer")
+      
+  );
+});
 //const Navigation = React.lazy(() => import('./Components/Navbar'));
  //const ProductListing = React.lazy(() => import('./containers/ProductListing'));
  //const ProductDetails = React.lazy(() => import('./containers/ProductDetails'));
@@ -20,7 +27,7 @@ import  Footer  from "./Components/Footer/Footer";
 function App() {
   return (
     <div className="App">
-  <Navigation/>
+  {/* <Navigation/>
   <Suspense fallback={<div>Loading...</div>}>
     
    
@@ -38,9 +45,12 @@ function App() {
         
         </Switch>
         </Router>
-        </Suspense>   
-      <Footer/>
         
+        </Suspense>   
+        <Suspense fallback={<div></div>}>
+        <Footer/>
+        </Suspense> */}
+        <News/>
     </div>
     
   );
