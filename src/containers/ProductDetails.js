@@ -96,7 +96,7 @@ debugger;
     <Card.Text>
     {Postd[0]}{Postd[1]}{Postd[2]}<br/><br/>{Postd[3]}{Postd[4]}<br/><br/>{Postd[5]}{Postd[6]}
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+
   </Card.Body>
 </Card></div></div></div>
       )}
