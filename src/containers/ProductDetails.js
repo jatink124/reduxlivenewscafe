@@ -58,11 +58,11 @@ const ProductDetails = () => {
       .catch((err) => {
         console.log("Err: ", err);
       });
-     
+     debugger;
       dispatch(selectedProduct(response.data.users[0]));
      
       var tyy=response.data.users[0].PostDetails.split(".");
-
+debugger;
    setPostd(tyy);
 };
 
@@ -92,9 +92,9 @@ const ProductDetails = () => {
   />
   <Card.Header as="h5">{PostTitle}</Card.Header>
   <Card.Body>
-    <Card.Title>{PostTitle}</Card.Title>
+    {/* <Card.Title>{PostTitle}</Card.Title> */}
     <Card.Text>
-    {Postd[0]}{Postd[1]}{Postd[2]}<br/><br/>{Postd[3]}{Postd[4]}
+    {Postd[0]}{Postd[1]}{Postd[2]}<br/><br/>{Postd[3]}{Postd[4]}<br/><br/>{Postd[5]}{Postd[6]}
     </Card.Text>
     <Button variant="primary">Go somewhere</Button>
   </Card.Body>

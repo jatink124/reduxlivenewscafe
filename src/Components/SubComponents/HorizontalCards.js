@@ -28,8 +28,6 @@ const HorizontalCards = () => {
     
     const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition } = product;
 
-   
-   
    return  (
   
    <div class='col-sm-6'>
@@ -48,7 +46,7 @@ const HorizontalCards = () => {
      
         <div class="card-body">
             <h4 class="card-title">{CategoryName}</h4>
-            <Link to={`/product/${id}`}>
+            <Link to={`/news/${id}`}>
             <p class="card-text">{PostTitle}</p></Link>
         </div>
        
