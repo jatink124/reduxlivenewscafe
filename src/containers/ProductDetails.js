@@ -23,7 +23,7 @@ const ProductDetails = () => {
   line-height: 40px;
 }
 .imgsmall{
-  width:1110px;
+  width:900px;
   height:300px;
 }
 }
@@ -94,7 +94,7 @@ debugger;
   <Card.Body>
     {/* <Card.Title>{PostTitle}</Card.Title> */}
     <Card.Text>
-    {Postd[0]}{Postd[1]}{Postd[2]}<br/><br/>{Postd[3]}{Postd[4]}<br/><br/>{Postd[5]}{Postd[6]}
+    {Postd[0]}{Postd[1]}<br/>{Postd[2]}<br/><br/>{Postd[3]}{Postd[4]}<br/><br/>{Postd[5]}{Postd[6]}
     </Card.Text>
 
   </Card.Body>
