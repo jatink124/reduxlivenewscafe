@@ -76,7 +76,7 @@ const IndiaCards = () => {
   
    <div class='col'>
  
-   <Link to={`/product/${id}`}>
+   <Link to={`/news/${id}`}>
      <div class="card">
      <Wrapper>
     <div class="card-horizontal">
