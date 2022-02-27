@@ -20,12 +20,12 @@ import  Footer  from "./Components/Footer/Footer";
 function App() {
   return (
     <div className="App">
-  <Navigation/>
+
   <Suspense fallback={<div>Loading...</div>}>
     
    
       <Router>
-      
+      <Navigation/>
         <Switch>
         
           <Route path="/" exact component={ProductListing} />
