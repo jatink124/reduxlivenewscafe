@@ -58,11 +58,11 @@ const ProductDetails = () => {
       .catch((err) => {
         console.log("Err: ", err);
       });
-     debugger;
+     
       dispatch(selectedProduct(response.data.users[0]));
      
       var tyy=response.data.users[0].PostDetails.split(".");
-debugger;
+
    setPostd(tyy);
 };
 

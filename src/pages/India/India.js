@@ -35,7 +35,7 @@ const India = () => {
         console.log("Err: ", err);
       });
   //  console.log(response.data.users);
-  debugger;  
+   
   dispatch(setProducts(response.data));
   };
   const catfetchProducts = async () => {
@@ -56,14 +56,9 @@ const India = () => {
     catfetchProducts();
  
 }, []);
-  
   return <>
- <div className="row">
-
 <IndiaCards/>
- </div>
-
-   </>;
+ </>;
 };
 
 export default India;

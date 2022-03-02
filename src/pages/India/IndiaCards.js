@@ -26,9 +26,10 @@ const Wrapper = styled.div`
 `;
 
 const IndiaContainer = styled.div`
+@media (min-width: 768px) {
 .container.contindia {
     margin: 40px;
-}
+}}
 .square {
     display: flex;
     width: 100px;
@@ -74,7 +75,7 @@ const IndiaCards = () => {
    
    return  (
   
-   <div class='col'>
+   <div class='col-md-4 col-sm-12'>
  
    <Link to={`/news/${id}`}>
      <div class="card">
@@ -86,7 +87,7 @@ const IndiaCards = () => {
      
         <div class="card-body">
             <h4 class="card-title">{CategoryName}</h4>
-            <Link to={`/product/${id}`}>
+            <Link to={`/news/${id}`}>
             <p class="card-text">{resultString}
             </p></Link>
             <Link to={`/product/${id}`}><Badge  bg="primary">Read More</Badge></Link>

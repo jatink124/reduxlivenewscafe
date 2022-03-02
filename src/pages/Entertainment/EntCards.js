@@ -23,9 +23,10 @@ const Wrapper = styled.div`
 }
 `;
 const EntContainer = styled.div`
+@media (min-width: 768px) {
 .container.contindia {
     margin: 40px;
-}
+}}
 .square {
     display: flex;
     width: 100px;
@@ -63,9 +64,9 @@ const EntCards = () => {
    
    return  (
   
-   <div class='col-sm-4 col-md-4 col-lg-4'>
+    <div class='col-md-4 col-sm-12'>
  
-   <Link to={`/product/${id}`}>
+   <Link to={`/news/${id}`}>
      <div class="card">
      <Wrapper>
     <div class="card-horizontal">

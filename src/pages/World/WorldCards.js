@@ -72,7 +72,7 @@ const WorldCards = () => {
    
    return  (
   
-   <div class='col-sm-12 col-md-4'>
+    <div class='col-md-4 col-sm-12'>
  
   
      <div class="card h-50">
@@ -84,7 +84,7 @@ const WorldCards = () => {
      
         <div class="card-body">
             <h4 class="card-title">{CategoryName}</h4>
-            <Link to={`/product/${id}`}>
+            <Link to={`/news/${id}`}>
             <p class="card-text">{resultString}
             </p></Link>
            {/* Invoking readmore function */}
