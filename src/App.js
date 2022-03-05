@@ -1,7 +1,7 @@
 import React,{Suspense} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import { QueryClientProvider,QueryClient } from 'react-query';
 import ProductListing from "./containers/ProductListing";
 // import Header from "./containers/Header";
 import "./App.css";
@@ -12,14 +12,16 @@ import India from "./pages/India/India";
 import Technology from "./pages/Technology/Technology";
 import World from "./pages/World/World";
 import { News } from "./News";
-// import  Footer  from "./Components/Footer/Footer";
-const Footer = React.lazy(() => {
-  return new Promise(resolve => setTimeout(resolve, 20 * 1000)).then(
-    () =>
-    import("./Components/Footer/Footer")
+import  Footer  from "./Components/Footer/Footer";
+import("./Components/Footer/Footer")
+const queryClient = new QueryClient();
+// const Footer = React.lazy(() => {
+//   return new Promise(resolve => setTimeout(resolve, 20 * 1000)).then(
+//     () =>
+//     import("./Components/Footer/Footer")
       
-  );
-});
+//   );
+// });
 //const Navigation = React.lazy(() => import('./Components/Navbar'));
  //const ProductListing = React.lazy(() => import('./containers/ProductListing'));
  //const ProductDetails = React.lazy(() => import('./containers/ProductDetails'));
@@ -27,10 +29,11 @@ const Footer = React.lazy(() => {
 function App() {
   return (
     <div className="App">
-  {/* <Navigation/>
+  <Navigation/>
+  <QueryClientProvider client={queryClient}>
   <Suspense fallback={<div>Loading...</div>}>
     
-   
+ 
       <Router>
       
         <Switch>
@@ -45,12 +48,12 @@ function App() {
         
         </Switch>
         </Router>
-        
+       
         </Suspense>   
-        <Suspense fallback={<div></div>}>
+        </QueryClientProvider>
         <Footer/>
-        </Suspense> */}
-        <News/>
+
+        {/* <News/> */}
     </div>
     
   );

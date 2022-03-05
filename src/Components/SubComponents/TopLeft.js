@@ -5,6 +5,8 @@ import { Card } from 'react-bootstrap';
 import styled from "styled-components";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import axios from "axios";
+import {useQuery} from 'react-query'
 const Wrapper = styled.div`
 
 .imgsmall{
@@ -14,8 +16,16 @@ object-fit:cover;
 `;
 
 const TopLeft = () => {
-
-  const products = useSelector((state) => state.allProducts.products);
+ 
+   const products = useSelector((state) => state.allProducts.products);
+  // const {isLoading,data} = useQuery('usernews',() => {
+  //   return axios.get('https://www.livenewscafe.xyz/php-react-post-list/all-users.php')
+    
+  // })
+  // if(isLoading){
+  //   return <h2>Loading...</h2>
+  // }
+ 
 
   const renderListt= products.filter(products=>products.PostPosition==1&products.PostList==""&products.Status==1).map((product) => {
    const {id,CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition} = product;

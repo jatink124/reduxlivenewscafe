@@ -17,13 +17,14 @@ import styled from "styled-components";
       
 //   );
 // });
-const BiggerCard = React.lazy(() => {
-  return new Promise(resolve => setTimeout(resolve, 7 * 1000)).then(
-    () =>
-     import("../Components/SubComponents/BiggerCard")
+// const BiggerCard = React.lazy(() => {
+//   return new Promise(resolve => setTimeout(resolve, 7 * 1000)).then(
+//     () =>
+//      import("../Components/SubComponents/BiggerCard")
        
-  );
-});
+//   );
+// });
+import BiggerCard from "../Components/SubComponents/BiggerCard";
 const CardList = React.lazy(() => import('../Components/SubComponents/CardList'));
 const TopLeft = React.lazy(() => import('../Components/SubComponents/TopLeft'));
 const HorizontalCards = React.lazy(() => import('../Components/SubComponents/HorizontalCards'));

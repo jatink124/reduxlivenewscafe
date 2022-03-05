@@ -1,5 +1,6 @@
 import React, { useEffect, useCallback, useMemo ,Suspense} from "react";
 import axios from "axios";
+import {useQuery} from 'react-query'
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts,setProductsCat } from "../redux/actions/productsActions";
 import ProductComponent from "./ProductComponent";
@@ -7,20 +8,18 @@ import {MainContainer} from '../Styles/ProductListing';
 const ProductListing = () => {
   const products = useSelector((state) => state.allProducts.products);
   const catproducts = useSelector((state) => state.catallProducts.catproducts);
-
+ 
   const dispatch = useDispatch();
-  const fetchProducts = async () => {
-    
+  const Fetch = async () => {
     const response = await axios
-      .get("https://www.livenewscafe.xyz/php-react-post-list/all-users.php")
-      .catch((err) => {
-        console.log("Err: ", err);
-      });
-
-      console.log(response.data);
-     
-  dispatch(setProducts(response.data));
+    .get("https://www.livenewscafe.xyz/php-react-post-list/all-users.php")
+    .catch((err) => {
+      console.log("Err: ", err);
+    });
+   
+    dispatch(setProductsCat(response.data));
   };
+
   const catfetchProducts = async () => {
    
     const response = await axios
@@ -33,7 +32,7 @@ const ProductListing = () => {
   };
 
   useEffect(() => {
-    fetchProducts();
+    Fetch();
     catfetchProducts();
   }, []);
   console.log("Products :", products);
