@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 //import HorizontalCards from "../Components/SubComponents/HorizontalCards";
 // import BiggerCard from "../Components/SubComponents/BiggerCard";
-// import CardList from "../Components/SubComponents/CardList";
+import CardList from "../Components/SubComponents/CardList";
 
 
 // import TopLeft from "../Components/SubComponents/TopLeft";
@@ -25,7 +25,7 @@ import styled from "styled-components";
 //   );
 // });
 import BiggerCard from "../Components/SubComponents/BiggerCard";
-const CardList = React.lazy(() => import('../Components/SubComponents/CardList'));
+// const CardList = React.lazy(() => import('../Components/SubComponents/CardList'));
 const TopLeft = React.lazy(() => import('../Components/SubComponents/TopLeft'));
 const HorizontalCards = React.lazy(() => import('../Components/SubComponents/HorizontalCards'));
 
@@ -47,19 +47,22 @@ const ProductComponent = () => {
   return <>
  <div className="row">
    <div className="col-md-4">
-   <Suspense fallback={<div>Loading...</div>}>
+   {/* <Suspense fallback={<div>Loading...</div>}>
   <TopLeft/>
-  </Suspense>
+  </Suspense> */}
+
+  <TopLeft/>
+ 
    </div>
    <div className="col-md-4">
-   <Suspense fallback={<div>Loading...</div>}>
+ 
    <BiggerCard/>
-   </Suspense>
+ 
      </div>
      <div className="col-md-4">
-     {/* <Suspense fallback={<div>Loading...</div>}>
+
   <CardList/>
-  </Suspense> */}
+
      </div>
  </div>
 

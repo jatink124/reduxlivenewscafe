@@ -17,14 +17,13 @@ img.card-img-top{
   
 }
 `;
+const fshb = () => {
+  return axios.get('https://www.livenewscafe.xyz/php-react-post-list/category-wise-allusers.php')
+}
 const BiggerCard = () => {
- console.log(useSelector((state) => state));
+debugger;
   // const products = useSelector((state) => state.allProducts.products);
-  const {isLoading,data,isFetching} = useQuery('usernews',() => {
-    return axios.get('https://www.livenewscafe.xyz/php-react-post-list/all-users.php'),
-    {Time:5000,}
-    
-  })
+  const {isLoading,data,isFetching} = useQuery('usernewss',fshb,{staleTime:300000})
   if(isLoading){
     return <h2>Loading...</h2>
   }

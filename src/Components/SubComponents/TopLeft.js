@@ -14,15 +14,14 @@ const Wrapper = styled.div`
 object-fit:cover;
 }
 `;
+const fsh = () => {
+  return axios.get('https://www.livenewscafe.xyz/php-react-post-list/all-users.php')
+}
 
 const TopLeft = () => {
  
   // const products = useSelector((state) => state.allProducts.products);
-  const {isLoading,data,isFetching} = useQuery('usernews',() => {
-    return axios.get('https://www.livenewscafe.xyz/php-react-post-list/all-users.php'),
-    {Time:5000,}
-    
-  })
+  const {isLoading,data,isFetching} = useQuery('usernews',fsh,{staleTime:30000})
   if(isLoading){
     return <h2>Loading...</h2>
   }

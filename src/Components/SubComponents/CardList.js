@@ -5,6 +5,8 @@ import { Card } from 'react-bootstrap';
 import styled from "styled-components";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import axios from "axios";
+import {useQuery} from 'react-query';
 const Wrapper = styled.div`
 .card-horizontal{
 display: flex;
@@ -15,10 +17,17 @@ flex-direction:row;
  height:250px; 
 }
 `;
+const fshcardlist = () => {
+  return axios.get('https://www.livenewscafe.xyz/php-react-post-list/all-users.php')
+}
 const CardList = () => {
- console.log(useSelector((state) => state));
-  const products = useSelector((state) => state.allProducts.products);
-  const renderListtright = products.filter(products=>products.PostList!=""&products.PostPosition==3&products.Status=="1").map((product) => {
+//  console.log(useSelector((state) => state));
+//   const products = useSelector((state) => state.allProducts.products);
+const {isLoading,data,isFetching} = useQuery('usernewscardlist',fshcardlist,{staleTime:30000})
+  if(isLoading){
+    return <h2>Loading...</h2>
+  }
+  const renderListtright = data.data.filter(products=>products.PostList!=""&products.PostPosition==3&products.Status=="1").map((product) => {
   
   const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostList } = product;
   
