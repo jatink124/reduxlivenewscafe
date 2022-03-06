@@ -2,6 +2,7 @@ import React,{Suspense} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { QueryClientProvider,QueryClient } from 'react-query';
+import {ReactQueryDevTools} from 'react-query/devtools';
 import ProductListing from "./containers/ProductListing";
 // import Header from "./containers/Header";
 import "./App.css";
@@ -13,8 +14,8 @@ import Technology from "./pages/Technology/Technology";
 import World from "./pages/World/World";
 import { News } from "./News";
 import  Footer  from "./Components/Footer/Footer";
-import("./Components/Footer/Footer")
-const queryClient = new QueryClient();
+import("./Components/Footer/Footer");
+
 // const Footer = React.lazy(() => {
 //   return new Promise(resolve => setTimeout(resolve, 20 * 1000)).then(
 //     () =>
@@ -30,7 +31,7 @@ function App() {
   return (
     <div className="App">
   <Navigation/>
-  <QueryClientProvider client={queryClient}>
+
   <Suspense fallback={<div>Loading...</div>}>
     
  
@@ -50,7 +51,7 @@ function App() {
         </Router>
        
         </Suspense>   
-        </QueryClientProvider>
+     
         <Footer/>
 
         {/* <News/> */}

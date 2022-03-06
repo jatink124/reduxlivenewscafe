@@ -10,31 +10,41 @@ const ProductListing = () => {
   const catproducts = useSelector((state) => state.catallProducts.catproducts);
  
   const dispatch = useDispatch();
-  const Fetch = async () => {
-    const response = await axios
-    .get("https://www.livenewscafe.xyz/php-react-post-list/all-users.php")
-    .catch((err) => {
-      console.log("Err: ", err);
-    });
+ 
+  // const Fetch = async () => {
+  //   const response = await axios
+  //   .get("https://www.livenewscafe.xyz/php-react-post-list/all-users.php")
+  //   .catch((err) => {
+  //     console.log("Err: ", err);
+  //   });
    
-    dispatch(setProductsCat(response.data));
-  };
+  //   dispatch(setProducts(response.data));
+  // };
 
-  const catfetchProducts = async () => {
+  // const catfetchProducts = async () => {
    
-    const response = await axios
-      .get("https://www.livenewscafe.xyz/php-react-post-list/category-wise-allusers.php")
-      .catch((err) => {
-        console.log("Err: ", err);
-      });
+  //   const response = await axios
+  //     .get("https://www.livenewscafe.xyz/php-react-post-list/category-wise-allusers.php")
+  //     .catch((err) => {
+  //       console.log("Err: ", err);
+  //     });
 
-      dispatch(setProductsCat(response.data));
-  };
+  //     dispatch(setProductsCat(response.data));
+  // };
 
   useEffect(() => {
-    Fetch();
-    catfetchProducts();
+    // Fetch();
+    // catfetchProducts();
   }, []);
+  // const {isLoading,data} = useQuery('usernews',() => {
+  //   return axios.get('https://www.livenewscafe.xyz/php-react-post-list/all-users.php')
+    
+  // })
+  // if(isLoading){
+  //   return <h2>Loading...</h2>
+  // }
+   
+  // dispatch(setProducts(data.data));
   console.log("Products :", products);
   console.log("Products :", catproducts);
   return (

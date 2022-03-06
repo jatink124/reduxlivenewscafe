@@ -17,17 +17,18 @@ object-fit:cover;
 
 const TopLeft = () => {
  
-   const products = useSelector((state) => state.allProducts.products);
-  // const {isLoading,data} = useQuery('usernews',() => {
-  //   return axios.get('https://www.livenewscafe.xyz/php-react-post-list/all-users.php')
+  // const products = useSelector((state) => state.allProducts.products);
+  const {isLoading,data,isFetching} = useQuery('usernews',() => {
+    return axios.get('https://www.livenewscafe.xyz/php-react-post-list/all-users.php'),
+    {Time:5000,}
     
-  // })
-  // if(isLoading){
-  //   return <h2>Loading...</h2>
-  // }
+  })
+  if(isLoading){
+    return <h2>Loading...</h2>
+  }
  
-
-  const renderListt= products.filter(products=>products.PostPosition==1&products.PostList==""&products.Status==1).map((product) => {
+console.log({data});
+  const renderListt= data.data.filter(products=>products.PostPosition==1&products.PostList==""&products.Status==1).map((product) => {
    const {id,CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition} = product;
 return  (
     <div class='row'>
