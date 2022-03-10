@@ -30,7 +30,7 @@ import  Footer  from "./Components/Footer/Footer";
 function App() {
   return (
     <div className="App">
-  <Navigation/>
+
 
  <Navigation/>
   <Suspense fallback={<div>Loading...</div>}>
