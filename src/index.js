@@ -12,7 +12,6 @@ ReactDOM.render(
     <QueryClientProvider client={queryClient}>
     <Provider store={store}>
     <App />
-    <ReactQueryDevtools />
     </Provider>
     </QueryClientProvider>
   </React.StrictMode>,

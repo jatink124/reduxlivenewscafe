@@ -30,22 +30,23 @@ const India = () => {
   
   const fetchProducts = async () => {
     const response = await axios
-      .get("https://www.catchmyjob.in/php-react-post-list/all-users.php")
+      .get("https://www.livenewscafe.xyz/php-react-post-list/all-users.php")
       .catch((err) => {
         console.log("Err: ", err);
       });
   //  console.log(response.data.users);
-      dispatch(setProducts(response.data.users));
+   
+  dispatch(setProducts(response.data));
   };
   const catfetchProducts = async () => {
    
     const response = await axios
-      .get(`https://www.catchmyjob.in/php-react-post-list/category-wise-allusers.php?cat=${cat}`)
+      .get(`https://www.livenewscafe.xyz/php-react-post-list/category-wise-allusers.php?cat=${cat}`)
       .catch((err) => {
         console.log("Err: ", err);
       });
 
-      dispatch(setProductsCat(response.data.users));
+      dispatch(setProductsCat(response.data));
      
     };
 
@@ -55,14 +56,9 @@ const India = () => {
     catfetchProducts();
  
 }, []);
-  
   return <>
- <div className="row">
-
 <IndiaCards/>
- </div>
-
-   </>;
+ </>;
 };
 
 export default India;

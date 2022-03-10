@@ -32,11 +32,12 @@ function App() {
     <div className="App">
   <Navigation/>
 
+ <Navigation/>
   <Suspense fallback={<div>Loading...</div>}>
     
  
       <Router>
-      
+     
         <Switch>
         
           <Route path="/" exact component={ProductListing} />

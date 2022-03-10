@@ -63,9 +63,9 @@ const TechCards = () => {
    
    return  (
   
-   <div class='col'>
+    <div class='col-md-4 col-sm-12'>
  
-   <Link to={`/product/${id}`}>
+   <Link to={`/news/${id}`}>
      <div class="card">
      <Wrapper>
     <div class="card-horizontal">

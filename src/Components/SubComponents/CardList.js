@@ -31,10 +31,11 @@ const {isLoading,data,isFetching} = useQuery('usernewscardlist',fshcardlist,{sta
   
   const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostList } = product;
   
-  var ty = PostDetails.split(".");
+  var ty = PostList.split(".");
+ 
   return (
    <>
-<Link to={`/product/${id}`}>
+<Link to={`/news/${id}`}>
   <div class="card">
    {/* <img class="card-img-top" src={PostUrl} alt="Card image cap" ></img> */}
    <LazyLoadImage
@@ -51,10 +52,10 @@ const {isLoading,data,isFetching} = useQuery('usernewscardlist',fshcardlist,{sta
     <li class="list-group-item">{ty[1]}</li>
     <li class="list-group-item">{ty[2]}</li>
   </ul>
-  <div class="card-body">
+  {/* <div class="card-body">
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
-  </div>
+  </div> */}
 </div>
 </Link>
 </>

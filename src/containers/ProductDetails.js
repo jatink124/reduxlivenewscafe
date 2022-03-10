@@ -23,7 +23,7 @@ const ProductDetails = () => {
   line-height: 40px;
 }
 .imgsmall{
-  width:1110px;
+  width:900px;
   height:300px;
 }
 }
@@ -92,11 +92,11 @@ const ProductDetails = () => {
   />
   <Card.Header as="h5">{PostTitle}</Card.Header>
   <Card.Body>
-    <Card.Title>{PostTitle}</Card.Title>
+    {/* <Card.Title>{PostTitle}</Card.Title> */}
     <Card.Text>
-    {Postd[0]}{Postd[1]}{Postd[2]}<br/><br/>{Postd[3]}{Postd[4]}
+    {Postd[0]}{Postd[1]}<br/>{Postd[2]}<br/><br/>{Postd[3]}{Postd[4]}<br/><br/>{Postd[5]}{Postd[6]}
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+
   </Card.Body>
 </Card></div></div></div>
       )}
