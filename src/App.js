@@ -14,7 +14,7 @@ import Technology from "./pages/Technology/Technology";
 import World from "./pages/World/World";
 import { News } from "./News";
 import  Footer  from "./Components/Footer/Footer";
-import("./Components/Footer/Footer");
+// import("./Components/Footer/Footer");
 
 // const Footer = React.lazy(() => {
 //   return new Promise(resolve => setTimeout(resolve, 20 * 1000)).then(
@@ -49,10 +49,10 @@ function App() {
         
         </Switch>
         </Router>
-       
+        
         </Suspense>   
      
-        <Footer/>
+    
 
         {/* <News/> */}
     </div>

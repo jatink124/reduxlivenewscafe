@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProducts,setProductsCat } from "../redux/actions/productsActions";
 import ProductComponent from "./ProductComponent";
 import {MainContainer} from '../Styles/ProductListing';
+import Footer from "../Components/Footer/Footer";
 const ProductListing = () => {
   const products = useSelector((state) => state.allProducts.products);
   const catproducts = useSelector((state) => state.catallProducts.catproducts);
@@ -48,12 +49,15 @@ const ProductListing = () => {
   console.log("Products :", products);
   console.log("Products :", catproducts);
   return (
+ <>
  <MainContainer>
  <div className="ui grid container">
       <ProductComponent />
     </div>
     </MainContainer>
-  );
+<Footer/>
+</>
+);
 };
 
 export default ProductListing;
