@@ -11,7 +11,13 @@ const Wrapper = styled.div`
 
 .imgsmall{
   width:100%;
+  height:70%;
 object-fit:cover;
+}
+.imgsmalll{
+  width:350px;
+  height:230px;
+  object-fit:cover;
 }
 `;
 const fsh = () => {
@@ -27,20 +33,28 @@ const TopLeft = () => {
   }
  
 console.log({data});
+
   const renderListt= data.data.filter(products=>products.PostPosition==1&products.PostList==""&products.Status==1).map((product) => {
    const {id,CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition} = product;
 return  (
-    <div class='row'>
+    <div class='row '>
    <div class='col'>
  <div class="card">
      <Wrapper>
     <div class="card-horizontal">
         <div class="img-square-wrapper">
         <LazyLoadImage
- className="imgsmall"
+ className="imgsmall d-md-none"
       src={PostUrl} // use normal <img> attributes as props
       effect="blur"
-      />
+     
+     />
+        <LazyLoadImage
+ className="imgsmalll d-xs-none d-none d-md-block"
+      src={PostUrl} // use normal <img> attributes as props
+      effect="blur"
+     
+     />
         </div>
      
         <div class="card-body">

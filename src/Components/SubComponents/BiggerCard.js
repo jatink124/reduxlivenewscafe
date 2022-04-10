@@ -21,7 +21,7 @@ const fshb = () => {
   return axios.get('https://www.livenewscafe.xyz/php-react-post-list/category-wise-allusers.php')
 }
 const BiggerCard = () => {
-debugger;
+
   // const products = useSelector((state) => state.allProducts.products);
   const {isLoading,data,isFetching} = useQuery('usernewss',fshb,{staleTime:300000})
   if(isLoading){
