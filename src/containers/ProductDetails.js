@@ -26,6 +26,9 @@ const ProductDetails = () => {
   width:900px;
   height:300px;
 }
+.ui.grid.container{
+  width:950px !important;
+}
 }
 @media only screen and (max-width: 768px) {
   .card-text{
@@ -47,9 +50,11 @@ const ProductDetails = () => {
   let product = useSelector((state) => state.product);
   
  
-  const { CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl } = product;
+  const { CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostList } = product;
+
 
  const [Postd,setPostd]=useState('');
+ const [Postdl,setPostl]=useState('');
   
   const dispatch = useDispatch();
   const fetchProductDetail = async (id) => {
@@ -60,11 +65,14 @@ const ProductDetails = () => {
       });
      
       dispatch(selectedProduct(response.data.users[0]));
-     
+  
       var tyy=response.data.users[0].PostDetails.split(".");
+      var ty=response.data.users[0].PostList.split(".");
 
    setPostd(tyy);
-};
+   setPostl(ty);
+
+  };
 
   useEffect(() => {
     if (id && id !== "") fetchProductDetail(id);
@@ -72,8 +80,8 @@ const ProductDetails = () => {
       dispatch(removeSelectedProduct());
     };
   }, [id]);
- 
- 
+  
+
   return (
   <WorldStyles>
   <div className="ui grid container">
@@ -93,6 +101,12 @@ const ProductDetails = () => {
   <Card.Header as="h5">{PostTitle}</Card.Header>
   <Card.Body>
     {/* <Card.Title>{PostTitle}</Card.Title> */}
+   <Card.Text>
+   <ul>
+        {/* {Postdl.map((car)=><li>{car}</li>)} */}
+        <li>{Postdl[0]}</li><li>{Postdl[1]}</li><li>{Postdl[2]}</li>
+      </ul>
+   </Card.Text>
     <Card.Text>
     {Postd[0]}{Postd[1]}<br/>{Postd[2]}<br/><br/>{Postd[3]}{Postd[4]}<br/><br/>{Postd[5]}{Postd[6]}
     </Card.Text>

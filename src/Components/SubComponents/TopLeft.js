@@ -34,7 +34,7 @@ const TopLeft = () => {
  
 console.log({data});
 
-  const renderListt= data.data.filter(products=>products.PostPosition==1&products.PostList==""&products.Status==1).map((product) => {
+  const renderListt= data.data.filter(products=>products.PostPosition==1&products.Status==1).map((product) => {
    const {id,CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition} = product;
 return  (
     <div class='row '>
