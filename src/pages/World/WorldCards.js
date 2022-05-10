@@ -60,7 +60,7 @@ const WorldCards = () => {
  <div class="container">
 
   <div class='row'>{
-   products.filter(products=>products.PostList!=""&products.CategoryName=='World').map((product) => {
+   products.filter(products=>products.PostList!=""&products.CategoryName=='World'&products.Status==1).map((product) => {
    
     const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition } = product;
 
@@ -89,7 +89,7 @@ const WorldCards = () => {
             </p></Link>
            {/* Invoking readmore function */}
             {/* <Badge onClick={toggleIsTruncated} bg="primary">Read More</Badge> */}
-            <Link to={`/product/${id}`}><Badge  bg="primary">Read More</Badge></Link>
+            <Link to={`/news/${id}`}><Badge  bg="primary">Read More</Badge></Link>
         </div>
        
     </div>

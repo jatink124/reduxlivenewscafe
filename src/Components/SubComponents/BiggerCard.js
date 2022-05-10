@@ -28,7 +28,7 @@ const BiggerCard = () => {
     return <h2>Loading...</h2>
   }
 
-  const renderListt = data.data.filter(products=>products.PostPosition==2&products.PostList==""&products.Status=="1").map((product) => {
+  const renderListt = data.data.filter(products=>products.PostPosition==2&products.Status=="1").map((product) => {
 
   const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl } = product;
   return (
