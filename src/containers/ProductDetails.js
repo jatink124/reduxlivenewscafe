@@ -100,13 +100,14 @@ const ProductDetails = () => {
   />
   <Card.Header as="h5">{PostTitle}</Card.Header>
   <Card.Body>
-    {/* <Card.Title>{PostTitle}</Card.Title> */}
+   
+   {PostList!=1?
    <Card.Text>
    <ul>
         {/* {Postdl.map((car)=><li>{car}</li>)} */}
         <li>{Postdl[0]}</li><li>{Postdl[1]}</li><li>{Postdl[2]}</li>
       </ul>
-   </Card.Text>
+   </Card.Text>:<div></div>}
     <Card.Text>
     {Postd[0]}{Postd[1]}<br/>{Postd[2]}<br/><br/>{Postd[3]}{Postd[4]}<br/><br/>{Postd[5]}{Postd[6]}
     </Card.Text>
