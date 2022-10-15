@@ -6,6 +6,7 @@ import { setProducts,setProductsCat } from "../redux/actions/productsActions";
 import ProductComponent from "./ProductComponent";
 import {MainContainer} from '../Styles/ProductListing';
 import Footer from "../Components/Footer/Footer";
+import Design2 from "../Components/Test/Design2";
 const ProductListing = () => {
   const products = useSelector((state) => state.allProducts.products);
   const catproducts = useSelector((state) => state.catallProducts.catproducts);
@@ -55,6 +56,7 @@ const ProductListing = () => {
       <ProductComponent />
     </div>
     </MainContainer>
+
 <Footer/>
 </>
 );

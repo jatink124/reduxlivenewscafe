@@ -63,7 +63,7 @@ const IndiaCards = () => {
  <div class="container contindia">
  <div class='row'> {
 
-  products.filter(products=>products.PostList==""&products.CategoryName=='India'&products.Status==1).map((product) => {
+  products.filter(products=>products.CategoryName=='India'&products.Status==1).map((product) => {
    
     const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition } = product;
 

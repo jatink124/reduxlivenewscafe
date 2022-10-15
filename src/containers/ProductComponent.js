@@ -25,6 +25,9 @@ import CardList from "../Components/SubComponents/CardList";
 //   );
 // });
 import BiggerCard from "../Components/SubComponents/BiggerCard";
+import FocussedCard from "../Components/SubComponents/FocussedCard";
+import Services_Section from "../Components/Services_Section";
+import Blog from "../Components/Blog";
 // const CardList = React.lazy(() => import('../Components/SubComponents/CardList'));
 const TopLeft = React.lazy(() => import('../Components/SubComponents/TopLeft'));
 const HorizontalCards = React.lazy(() => import('../Components/SubComponents/HorizontalCards'));
@@ -65,8 +68,11 @@ const ProductComponent = () => {
 
      </div>
  </div>
+<HorizontalCards name={"I am present"}/>
+{/* <Services_Section/> */}
+<Blog/>
+<FocussedCard/>
 
-{/* <HorizontalCards/> */}
    </>;
 };
 

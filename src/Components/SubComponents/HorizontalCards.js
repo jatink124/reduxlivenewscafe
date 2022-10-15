@@ -5,6 +5,8 @@ import { Card } from 'react-bootstrap';
 import styled from "styled-components";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import axios from "axios";
+import {useQuery} from 'react-query'
 const Wrapper = styled.div`
 
 .imgsmall{
@@ -13,26 +15,32 @@ const Wrapper = styled.div`
   object-fit:cover;
 }
 `;
-
-const HorizontalCards = () => {
-   
-    console.log(useSelector((state) => state));
-  const products = useSelector((state) => state.allProducts.products);
-  console.log(products);
+const fsh = () => {
+  return axios.get('https://www.livenewscafe.xyz/php-react-post-list/all-users.php')
+}
+const HorizontalCards = (props) => {
+  //  debugger;
+  //   console.log(useSelector((state) => state));
+  // const products = useSelector((state) => state.allProducts.products);
+  // console.log(products);
+  const {isLoading,data,isFetching} = useQuery('usernews',fsh,{staleTime:30000})
+  if(isLoading){
+    return <h2>Loading...</h2>
+  }
   return <>
 
 
   <div class='row'>{
 
-   products.filter(products=>products.PostList==""&products.PostPosition==4&products.Status=="1").map((product) => {
+   data.data.filter(products=>products.PostPosition==1&products.Status==1).map((product) => {
     
     const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition } = product;
 
    return  (
   
-   <div class='col-sm-6'>
+   <div class='col-sm-4'>
  
-   
+   {props.name}
      <div class="card">
      <Wrapper>
     <div class="card-horizontal">
