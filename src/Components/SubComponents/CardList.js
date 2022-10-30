@@ -20,14 +20,14 @@ flex-direction:row;
 const fshcardlist = () => {
   return axios.get('https://www.livenewscafe.xyz/php-react-post-list/all-users.php')
 }
-const CardList = () => {
+const CardList = ({arr}) => {
 //  console.log(useSelector((state) => state));
 //   const products = useSelector((state) => state.allProducts.products);
 const {isLoading,data,isFetching} = useQuery('usernewscardlist',fshcardlist,{staleTime:30000})
   if(isLoading){
     return <h2>Loading...</h2>
   }
-  const renderListtright = data.data.filter(products=>products.PostList!=""&products.PostPosition==3&products.Status=="1").map((product) => {
+  const renderListtright =arr.map((product) => {
   
   const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostList } = product;
   

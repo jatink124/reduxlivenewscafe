@@ -2,6 +2,8 @@ import React,{Suspense} from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Card } from 'react-bootstrap';
+import axios from "axios";
+import {useQuery} from 'react-query'
 import styled from "styled-components";
 
 //import HorizontalCards from "../Components/SubComponents/HorizontalCards";
@@ -43,35 +45,47 @@ flex-direction:row;
 }
 `;
 const ProductComponent = () => {
- console.log(useSelector((state) => state));
-  const products = useSelector((state) => state.allProducts.products);
-  const catproducts = useSelector((state) => state.catallProducts.catproducts);
+//  console.log(useSelector((state) => state));
+//   const products = useSelector((state) => state.allProducts.products);
+//   const catproducts = useSelector((state) => state.catallProducts.catproducts);
+const fshb = () => {
+  return axios.get('https://www.livenewscafe.xyz/php-react-post-list/category-wise-allusers.php')
+}
+const {isLoading,data,isFetching} = useQuery('usernewss',fshb,{staleTime:300000})
+if(isLoading){
+  return <h2></h2>
+}
+var topleft=data.data.filter(products=>products.PostPosition==1&products.Status=="1").map((p)=>p);
+var biggercard=data.data.filter(products=>products.PostPosition==2&products.Status=="1").map((p)=>p);
+var cardlist=data.data.filter(products=>products.PostPosition==3&products.Status=="1").map((p)=>p);
+var horizontalcard=data.data.filter(products=>products.PostPosition==1&products.Status=="1").map((p)=>p);
 
-  return <>
+// console.log(returneddata[0]);
+ return <>
  <div className="row">
    <div className="col-md-4">
    {/* <Suspense fallback={<div>Loading...</div>}>
   <TopLeft/>
   </Suspense> */}
 
-  <TopLeft/>
+  <TopLeft arr={topleft}/>
  
    </div>
    <div className="col-md-4">
  
-   <BiggerCard/>
+   <BiggerCard arr={biggercard}/>
  
      </div>
      <div className="col-md-4">
 
-  <CardList/>
+  <CardList arr={cardlist}/>
 
      </div>
  </div>
-<HorizontalCards name={"I am present"}/>
+<HorizontalCards arr={horizontalcard}/>
 {/* <Services_Section/> */}
 <Blog/>
-<FocussedCard/>
+{/* <FocussedCard/> */}
 
    </>;
 };

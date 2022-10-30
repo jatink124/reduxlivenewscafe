@@ -29,7 +29,7 @@ const BiggerCard = () => {
   }
 
   const renderListt = data.data.filter(products=>products.PostPosition==2&products.Status=="1").map((product) => {
-    debugger;
+
   const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl } = product;
   return (
     <Link to={`/news/${id}`}>

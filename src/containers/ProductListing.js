@@ -47,8 +47,9 @@ const ProductListing = () => {
   // }
    
   // dispatch(setProducts(data.data));
-  console.log("Products :", products);
-  console.log("Products :", catproducts);
+  
+  // console.log("Products :", products);
+  // console.log("Products :", catproducts);
   return (
  <>
  <MainContainer>

@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 const fsh = () => {
   return axios.get('https://www.livenewscafe.xyz/php-react-post-list/all-users.php')
 }
-const HorizontalCards = (props) => {
+const HorizontalCards = ({arr}) => {
   //  debugger;
   //   console.log(useSelector((state) => state));
   // const products = useSelector((state) => state.allProducts.products);
@@ -32,7 +32,7 @@ const HorizontalCards = (props) => {
 
   <div class='row'>{
 
-   data.data.filter(products=>products.PostPosition==1&products.Status==1).map((product) => {
+   arr.map((product) => {
     
     const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl,PostPosition } = product;
 
@@ -40,7 +40,7 @@ const HorizontalCards = (props) => {
   
    <div class='col-sm-4'>
  
-   {props.name}
+  
      <div class="card">
      <Wrapper>
     <div class="card-horizontal">
