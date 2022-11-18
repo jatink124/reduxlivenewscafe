@@ -56,7 +56,7 @@ const ProductListing = () => {
   return (
  <>
  <MainContainer>
- <div className="ui grid container">
+ <div className="ui grid container mainpage">
       <ProductComponent />
     </div>
     </MainContainer>
