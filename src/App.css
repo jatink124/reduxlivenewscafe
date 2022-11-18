@@ -44,6 +44,7 @@
 
 .ui.grid.container {
   margin-top: 45px;
+  width: 950px!important;
 }
 
 .ui.grid > .row {
@@ -95,4 +96,13 @@
 a{
   text-decoration: none !important;
 color:#212529;
+}
+
+.navbar a{
+  color:#f7f0f0;
+}
+
+.fYMydg .ui.grid.container {
+  padding-bottom: 20px;
+  width: 1200px!important;
 }

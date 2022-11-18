@@ -13,11 +13,13 @@ import India from "./pages/India/India";
 import Technology from "./pages/Technology/Technology";
 import World from "./pages/World/World";
 import { News } from "./News";
-import Footer from "./Components/Footer/Footer";
+
 import FocussedCard from "./Components/SubComponents/FocussedCard";
 import Test from "./Components/Test/Test";
 import Design1 from "./Components/Test/Design1";
 import Blog from "./Components/Blog";
+import Menu from "./Components/Footer/Menu";
+import Footer from "./Footer";
 // import("./Components/Footer/Footer");
 
 // const Footer = React.lazy(() => {

@@ -30,6 +30,7 @@ import BiggerCard from "../Components/SubComponents/BiggerCard";
 import FocussedCard from "../Components/SubComponents/FocussedCard";
 import Services_Section from "../Components/Services_Section";
 import Blog from "../Components/Blog";
+import Footer from "../Footer";
 // const CardList = React.lazy(() => import('../Components/SubComponents/CardList'));
 const TopLeft = React.lazy(() => import('../Components/SubComponents/TopLeft'));
 const HorizontalCards = React.lazy(() => import('../Components/SubComponents/HorizontalCards'));
@@ -44,13 +45,16 @@ flex-direction:row;
   height:100px;
 }
 `;
+
 const ProductComponent = () => {
-//  console.log(useSelector((state) => state));
+  
+  //  console.log(useSelector((state) => state));
 //   const products = useSelector((state) => state.allProducts.products);
 //   const catproducts = useSelector((state) => state.catallProducts.catproducts);
 const fshb = () => {
   return axios.get('https://www.livenewscafe.xyz/php-react-post-list/category-wise-allusers.php')
 }
+const count=0;
 const {isLoading,data,isFetching} = useQuery('usernewss',fshb,{staleTime:300000})
 if(isLoading){
   return <h2></h2>
@@ -61,12 +65,14 @@ var cardlist=data.data.filter(products=>products.PostPosition==3&products.Status
 var horizontalcard=data.data.filter(products=>products.PostPosition==1&products.Status=="1").map((p)=>p);
 
 // console.log(returneddata[0]);
- return <>
+
+return <>
  <div className="row">
    <div className="col-md-4">
-   {/* <Suspense fallback={<div>Loading...</div>}>
+    {/* <Suspense fallback={<div>Loading...</div>}>
   <TopLeft/>
-  </Suspense> */}
+  </Suspense>  */}
+
 
   <TopLeft arr={topleft}/>
  
@@ -85,6 +91,7 @@ var horizontalcard=data.data.filter(products=>products.PostPosition==1&products.
 <HorizontalCards arr={horizontalcard}/>
 {/* <Services_Section/> */}
 <Blog/>
+
 {/* <FocussedCard/> */}
 
    </>;
