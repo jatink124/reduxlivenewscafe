@@ -8,7 +8,7 @@ import styled from "styled-components";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import {useQuery} from 'react-query'
 import {
   selectedProduct,
   removeSelectedProduct,
@@ -75,23 +75,34 @@ const ProductDetails = () => {
       .catch((err) => {
         console.log("Err: ", err);
       });
-
+    
+      
     dispatch(selectedProduct(response.data.users[0]));
-
+    
     var tyy = response.data.users[0].PostDetails.split(".");
     var ty = response.data.users[0].PostList.split(".");
-
     setPostd(tyy);
     setPostl(ty);
+ 
   };
-
+ 
   useEffect(() => {
     if (id && id !== "") fetchProductDetail(id);
     return () => {
       dispatch(removeSelectedProduct());
     };
+   
   }, [id]);
-
+  const fsh = () => {
+    return axios.get('https://www.livenewscafe.xyz/php-react-post-list/category-wise-allusers.php')
+  }
+  const {isLoading,data,isFetching} = useQuery('usernews',fsh,{staleTime:30000})
+ 
+  if(isLoading){
+    return <h2>Loading...</h2>
+  }
+  var singlecard=data.data.filter(products=>products.id%2==0).map((p)=>p);
+debugger;
   return (
     <>
       {Object.keys(product).length === 0 ? (
@@ -135,13 +146,8 @@ const ProductDetails = () => {
             </Col>{" "}
             <Col className="d-none d-sm-block">
            <Container><Row>
-            <Col><SingleCard /></Col></Row>
-            <Row>
-            <Col><SingleCard /></Col></Row>
-            <Row>
-            <Col><SingleCard /></Col></Row></Container>
-            
-              </Col>
+            <Col><SingleCard arr={singlecard} /></Col></Row>
+            </Container></Col>
           </Row>{" "}
         </Container>
       )}
