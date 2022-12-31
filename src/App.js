@@ -40,7 +40,6 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Router>
           <Switch>
-            
             <Route path="/" exact component={ProductListing} />
             <Route path="/Entertainment" component={Entertainment} />
             <Route path="/India" exact component={India} />

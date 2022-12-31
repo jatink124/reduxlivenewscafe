@@ -17,18 +17,9 @@ img.card-img-top{
   
 }
 `;
-const fshb = () => {
-  return axios.get('https://www.livenewscafe.xyz/php-react-post-list/category-wise-allusers.php')
-}
-const BiggerCard = () => {
 
-  // const products = useSelector((state) => state.allProducts.products);
-  const {isLoading,data,isFetching} = useQuery('usernewss',fshb,{staleTime:300000})
-  if(isLoading){
-    return <h2>Loading...</h2>
-  }
-
-  const renderListt = data.data.filter(products=>products.PostPosition==2&products.Status=="1").map((product) => {
+const BiggerCard = ({arr}) => {
+const renderListt = arr.map((product) => {
 
   const { id, CategoryName,subCategoryName,PostTitle,PostDetails,PostUrl } = product;
   return (

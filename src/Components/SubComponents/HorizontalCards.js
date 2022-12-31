@@ -14,23 +14,9 @@ const Wrapper = styled.div`
     object-fit: cover;
   }
 `;
-const fsh = () => {
-  return axios.get(
-    "https://www.livenewscafe.xyz/php-react-post-list/all-users.php"
-  );
-};
+
 const HorizontalCards = ({ arr }) => {
-  //  debugger;
-  //   console.log(useSelector((state) => state));
-  // const products = useSelector((state) => state.allProducts.products);
-  // console.log(products);
-  const { isLoading, data, isFetching } = useQuery("usernews", fsh, {
-    staleTime: 30000,
-  });
-  if (isLoading) {
-    return <h2>Loading...</h2>;
-  }
-  return (
+ return (
     <>
       <div class="row">
         {arr.map((product) => {
